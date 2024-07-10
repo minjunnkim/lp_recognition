@@ -5,7 +5,7 @@ This project is designed to enhance the user experience at EV charging stations 
 ## Project Structure
 
 ```
-EV_Charging_Station_Project/
+lp_recognition/
 ├── camera/
 │ ├── capture_image.py
 │ └── camera_utils.py
@@ -43,8 +43,8 @@ EV_Charging_Station_Project/
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-repo/ev_charging_station_project.git
-    cd ev_charging_station_project
+    git clone https://github.com/minjunnkim/lp_recognition.git
+    cd lp_recognition
     ```
 
 2. **Create a virtual environment:**
@@ -98,13 +98,7 @@ EV_Charging_Station_Project/
     - Sign up for [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or install MongoDB locally.
     - Create a new database named `ev_charging`.
     - Create a collection named `profiles`.
-    - Update the MongoDB connection URI in `database/db_utils.py` and `database/db_setup.py`.
-
-        ```python
-        def get_database():
-            client = MongoClient('mongodb://your_mongodb_uri')
-            return client['ev_charging']
-        ```
+    - Update the MongoDB connection URI in your .env file
 
 ## Running the Project
 
