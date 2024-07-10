@@ -1,7 +1,12 @@
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+URI = os.getenv('MONGO_DB_URI') 
 
 def get_database():
-    client = MongoClient('mongodb+srv://ckandrew04:2pz6rSymbmXPBpVP@evcharging.i3nxnwz.mongodb.net/?retryWrites=true&w=majority&appName=evcharging')
+    client = MongoClient(URI)
     return client['ev_charging']
 
 def create_profiles_collection(db):
