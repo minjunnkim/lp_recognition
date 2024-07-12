@@ -16,3 +16,10 @@ def insert_profile(db, profile_data):
 def get_profiles(db, license_plate):
     profiles = db['profiles']
     return profiles.find_one({"license_plate": license_plate})
+
+def remove_profile(db, license_plate, profile_name):
+    profiles = db['profiles']
+    profiles.update_one(
+        {"license_plate": license_plate},
+        {"$pull": {"profiles": {"name": profile_name}}}
+    )
